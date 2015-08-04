@@ -7,11 +7,6 @@ ENTRYPOINT ["/bin/cassandra-docker"]
 COPY install-ubuntu-packages.sh /
 RUN /bin/sh /install-ubuntu-packages.sh
 
-# TEMPORARY: while the mirrors are messed up and I'm doing
-# dev passes, this will expect a tarball in the root of the repo
-# wget http://www.apache.dist/cassandra/2.1.4/apache-cassandra-2.1.4-bin.tar.gz
-COPY apache-cassandra-2.1.4-bin.tar.gz /
-
 COPY install-cassandra-tarball.sh /
 RUN /bin/sh /install-cassandra-tarball.sh
 
